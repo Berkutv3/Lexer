@@ -141,39 +141,6 @@ class Lexer:
                         self.index += 1
                         caracter = 0
                         return 302
-                """
-                if estado_sig == 5 and not(self.checkfloat(self.buffer)) and not(c == '"'):
-                    return 300
-                elif estado_sig == 5 and self.checkfloat(self.buffer) and not(c == '"'):
-                    return 301
-                elif estado_sig == 5 and c == '"':
-                    self.index += 1
-                    self.buffer += c
-                    return 303
-                else:
-                    self.buffer += c
-                    self.index += 1
-                    c = self.cadena[self.index]
-                    estado_sig = self.MATRIZ_TRANSC_CONST[estado_sig][self.scaner_const(c)]
-                    self.buffer = self.buffer.strip()
-                    if caracter == 1 and self.cadena[self.index + 1] == "'" and len(self.buffer) <= 1:
-                        m = self.cadena[self.index]
-                        self.buffer += m
-                        self.index += 1
-                        m = self.cadena[self.index]
-                        self.buffer += m
-                        self.index += 1
-                        caracter = 0
-                        return 302
-                    elif caracter == 1 and c == '"' and len(self.buffer) <= 1:
-                        m = self.cadena[self.index]
-                        self.buffer += m
-                        self.index += 1
-                        caracter = 0
-                        return 302
-                    else:
-                        return 200
-                """
 
     def afd_simb(self):
         c = self.cadena[self.index]
